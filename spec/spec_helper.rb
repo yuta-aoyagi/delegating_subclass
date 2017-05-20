@@ -1,3 +1,11 @@
+begin
+  require "simplecov"
+  SimpleCov.start "test_frameworks"
+rescue LoadError => e
+  warn "failed to load SimpleCov (#{e.class}) #{e}"
+  e.backtrace.each { |l| warn l }
+end
+
 require "bundler/setup"
 
 RSpec.configure do |config|
