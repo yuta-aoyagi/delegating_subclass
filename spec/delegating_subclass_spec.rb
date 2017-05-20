@@ -1,4 +1,3 @@
-require "spec_helper"
 require "delegating_subclass"
 
 RSpec.describe DelegatingSubclass do
