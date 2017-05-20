@@ -5,7 +5,7 @@ require "delegating_subclass/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "delegating_subclass"
-  spec.version       = DelegatingSubclass::VERSION
+  spec.version       = DelegatingSubclass::VERSION.dup
   spec.authors       = ["Yuta Aoyagi"]
   spec.email         = ["yuta.aoyagi.1992@gmail.com"]
 
