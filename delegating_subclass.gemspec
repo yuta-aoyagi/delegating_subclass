@@ -9,9 +9,14 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Yuta Aoyagi"]
   spec.email         = ["yuta.aoyagi.1992@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = "A subclass delegating some methods to the given object"
+  spec.description   =
+    "This gem provides a method dynamically making a subclass of the " \
+    "specified superclass.  An instance of the subclass delegates the " \
+    "methods specified in making the class to the first argument of its " \
+    "constructor."
+  spec.homepage      =
+    "https://github.com/github.com/yuta-aoyagi/delegating_subclass"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
