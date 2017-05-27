@@ -1,5 +1,13 @@
 require: rubocop-rspec
 
+# I prefer mocks over spies.
+RSpec/MessageSpies:
+  EnforcedStyle: receive
+
+# To support older RSpec than 3.0 that introduced verifying doubles
+RSpec/VerifiedDoubles:
+  Enabled: false
+
 Style/EndOfLine:
   EnforcedStyle: lf
 
