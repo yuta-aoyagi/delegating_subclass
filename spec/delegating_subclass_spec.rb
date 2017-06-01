@@ -15,7 +15,6 @@ RSpec.describe DelegatingSubclass do
     let(:returned_class) { described_class.of WithInitialize, :foo }
 
     it "returns a class whose ancestors array includes the argument" do
-      pending
       expect(returned_class.ancestors).to include(WithInitialize)
     end
   end
