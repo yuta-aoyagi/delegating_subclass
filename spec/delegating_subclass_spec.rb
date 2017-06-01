@@ -22,7 +22,6 @@ RSpec.describe DelegatingSubclass do
 
     it "returns a class having initialize that passes its arguments to the " \
        "super's initialize except the first one" do
-      pending
       obj = returned_class.new :unused_first_argument, :argument
       expect(obj.value).to eq(:argument)
     end

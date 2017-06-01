@@ -6,6 +6,10 @@ module DelegatingSubclass
   # @return [Class] a subclass of +superclass+
   def self.of(superclass, *_names)
     Class.new superclass do
+      define_method :initialize do |delegated, *rest|
+        super(*rest)
+        @delegated = delegated
+      end
     end
   end
 end
