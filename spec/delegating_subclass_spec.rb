@@ -27,7 +27,6 @@ RSpec.describe DelegatingSubclass do
     end
 
     it "returns a class whose instance delegates the specified methods" do
-      pending
       delegated = double "delegated object"
       expect(delegated).to receive(:foo).once.with(:argument)
       returned_class.new(delegated, :unused_second_argument).foo(:argument)
