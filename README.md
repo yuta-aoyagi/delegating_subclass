@@ -1,6 +1,6 @@
 # DelegatingSubclass
 
-TODO: Delete this text, and describe your gem
+This gem provides a method dynamically making a subclass of the specified superclass.  An instance of the subclass delegates the methods specified in making the class to the first argument of its constructor.
 
 ## Installation
 
@@ -14,7 +14,39 @@ And then execute:
 
 ## Usage
 
-TODO: Write usage instructions here
+    require "delegating_subclass"
+
+    class Superclass
+      def initialize(arg)
+        p arg
+      end
+
+      def foo
+        p "method in Superclass"
+      end
+    end
+
+    class AnotherClass
+      def bar
+        p "method in AnotherClass"
+      end
+    end
+
+    subclass = DelegatingSubclass.of Superclass, :bar
+    another = AnotherClass.new
+
+The returned `subclass` has `Superclass` as an ancestor:
+
+    p subclass.ancestors.include?(Superclass) #=> true
+
+The constructor passes its arguments except the first one:
+
+    obj = subclass.new another, :arg #=> :arg
+
+You can call both the methods specified to be delegated and the methods inherited from the `Superclass`:
+
+    obj.foo #=> "method in Superclass"
+    obj.bar #=> "method in AnotherClass"
 
 ## Development
 
